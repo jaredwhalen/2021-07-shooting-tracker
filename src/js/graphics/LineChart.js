@@ -84,14 +84,8 @@ class LineChart extends Component {
 
         for (var j = 1; j < daysInYear; j++) {
           let day = [];
-          day.push(
-            yearly.filter((f) => {
-              if (d == 2024 && j == 83) {
-                console.log(f.datetime, doyFromDate(f.datetime), f);
-              }
-              return doyFromDate(f.datetime) == j;
-            })
-          );
+          day.push(yearly.filter(d => doyFromDate(d.datetime) == j))
+          
           count = day[0].length;
           if (dateFromDay(d, j) > new Date()) {
             cumu = null;

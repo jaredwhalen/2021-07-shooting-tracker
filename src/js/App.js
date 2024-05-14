@@ -44,6 +44,12 @@ function debounce(fn, ms) {
 
 function App() {
 
+  console.log(`
+------
+Last deployed on 2024-05-14
+------
+  `
+  )
 
   const [data, setData] = useState(undefined)
 
