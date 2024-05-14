@@ -5,4 +5,14 @@ If running on Silicon Macbook Pro, follow this https://stackoverflow.com/questio
 
 nvm use 14.18.1
 npm start
+
+```
+
+To build
+```
+npm run build
+```
+To deploy, assuming you have gcloud config vars set
+```
+./deploy.sh
 ```
