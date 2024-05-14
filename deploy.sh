@@ -42,8 +42,6 @@ PROJECT_FOLDER="./build"
 PROJECT_FILE='index.html'
 PUBLIC_URL="$PUBLIC_PATH/$PROJECT_SLUG/$PROJECT_FILE"
 
-npm run build
-
 sed -i '' 's/\/delaware-online\/storytelling-embeds/https:\/\/www.gannett-cdn.com\/delaware-online\/storytelling-embeds/g' "$PROJECT_FOLDER/index.html"
 sed -i '' 's/<head>/''/' "$PROJECT_FOLDER/index.html"
 sed -i '' 's/<\/head>/''/' "$PROJECT_FOLDER/index.html"
