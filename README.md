@@ -27,5 +27,5 @@ export USAT_AUTH=
 export USCP_AUTH=
 ```
 
-Once those are set, from the project root you can run `./deploy.sh`, which will deploy your `build/` folder.
+Once those are set, from the project root you can run `./deploy.sh`, which will compile the app and deploy the `build/` folder.
 
