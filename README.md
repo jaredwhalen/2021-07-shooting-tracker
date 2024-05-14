@@ -26,6 +26,7 @@ export CDN_AUTH=
 export USAT_AUTH=
 export USCP_AUTH=
 ```
+You will also need `gsutil` installed, which can be [downloaded from here](https://cloud.google.com/storage/docs/gsutil_install#install).
 
 Once those are set, from the project root you can run `./deploy.sh`, which will compile the app and deploy the `build/` folder.
 
