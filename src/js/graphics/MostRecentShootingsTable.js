@@ -66,7 +66,6 @@ export default function MostRecentShootings(props) {
 
   let x = nestedFilter(initObj.groupByIncident, j)
 
-  console.log(x)
 
   let y = x.filter(d => {
     let a = d.filter(x => `${x.first_name} ${x.last_name}`.toLowerCase().includes(search))

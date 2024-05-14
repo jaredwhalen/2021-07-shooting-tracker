@@ -4,8 +4,9 @@ import "../../scss/components/ShootingsByYear.scss"
 import Pod from '../components/Pod.js'
 import LineChart from "./LineChart.js"
 import groupBy from "../util/groupBy.js"
-import getDayOfYear from "../util/getDayOfYear.js"
+import filterObjectsByDate from "../util/filterObjectsByDate.js"
 import getMonthName from "../util//getMonthName.js"
+
 
 
 class ShootingsByYear extends Component {
@@ -37,14 +38,17 @@ class ShootingsByYear extends Component {
       let woundedAnnual = d.filter(x => x.homicide === "no").length
       let homicidesAnnual = d.filter(x => x.homicide === "yes").length
 
-      let dYTD = d.filter(x => getDayOfYear(x.datetime) <= getDayOfYear())
+      let dYTD = filterObjectsByDate(d)
+
+  
 
       let incidentsYTD = dYTD.map( (value) => value.incident_id).filter( (value, index, _arr) => _arr.indexOf(value) == index).length;
       let woundedYTD = dYTD.filter(x => x.homicide === "no").length
       let homicidesYTD = dYTD.filter(x => x.homicide === "yes").length
 
-      if (year == new Date().getFullYear()) {
-      
+      let currentYear = year == new Date().getFullYear()
+
+      if (currentYear) {
         textVariables.current = {year, incidentsYTD, woundedYTD, homicidesYTD}
       } else if (year == new Date().getFullYear() - 1 ){
         textVariables.lastYear = {year, incidentsYTD, woundedYTD, homicidesYTD}
@@ -54,8 +58,6 @@ class ShootingsByYear extends Component {
         textVariables.current = {year: new Date().getFullYear(), incidentsYTD: 0, woundedYTD: 0, homicidesYTD: 0}
       }
  
-
-
       return(
         <tr>
           <td className="border-right">{year}</td>

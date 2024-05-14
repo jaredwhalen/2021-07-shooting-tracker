@@ -53,7 +53,7 @@ function App() {
       shootings.forEach(function (obj) {
         obj.demo = setDemo(obj);
         obj.datetime = new Date(obj.date)
-        obj.time ? obj.datetime.setHours(obj.time.split(':')[0], obj.time.split(':')[1]) : obj.datetime.setHours(0)
+        // obj.time ? obj.datetime.setHours(obj.time.split(':')[0], obj.time.split(':')[1]) : obj.datetime.setHours(0)
         obj.year = new Date(obj.date).getFullYear()
         obj.age = obj.age.length ? Number(obj.age) : undefined
         obj.latitude = Number(obj.latitude)
