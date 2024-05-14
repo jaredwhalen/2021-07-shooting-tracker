@@ -1,18 +1,31 @@
 # 2021-07-shooting-tracker
+
+This is an old React app deployed to the Gannett CDN.
+
+
+### Running locally
+If running on Silicon Macbook Pro, follow these [steps](https://stackoverflow.com/questions/67254339/nvm-install-node-fails-to-install-on-macos-big-sur-m1-chip) to install older versions of Node with nvm.
  
 ```
-If running on Silicon Macbook Pro, follow this https://stackoverflow.com/questions/67254339/nvm-install-node-fails-to-install-on-macos-big-sur-m1-chip
-
+# if on a newer Mac
+softwareupdate --install-rosetta
+arch -x86_64 zsh
+nvm install 14.18.1
 nvm use 14.18.1
 npm start
-
 ```
 
-To build
+### Building
+Run `npm run build`
+
+### Deploying
+To deploy, you'll need to have the following on your path
 ```
-npm run build
+export CDN_CURL_AUTH=
+export CDN_AUTH=
+export USAT_AUTH=
+export USCP_AUTH=
 ```
-To deploy, assuming you have gcloud config vars set
-```
-./deploy.sh
-```
+
+Once those are set, from the project root you can run `./deploy.sh`, which will deploy your `build/` folder.
+
