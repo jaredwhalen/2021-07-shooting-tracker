@@ -21,12 +21,12 @@ Run `npm run build`
 ### Deploying
 To deploy, you'll need to have the following on your path
 ```
-export CDN_CURL_AUTH=
-export CDN_AUTH=
-export USAT_AUTH=
-export USCP_AUTH=
+export CDN_CURL_AUTH=" ... [key] ... "
+export CDN_AUTH=" ... [key] ... "
+export USAT_AUTH=" ... [key] ... "
+export USCP_AUTH=" ... [key] ... "
 ```
 You will also need `gsutil` installed, which can be [downloaded from here](https://cloud.google.com/storage/docs/gsutil_install#install).
 
-Once those are set, from the project root you can run `./deploy.sh`, which will deploy the `build/` folder.
+Once those are set, from the project root you can run `./deploy.sh --production` (or `--staging` or `--preprod` depending on your need), which will deploy the `build/` folder.
 
